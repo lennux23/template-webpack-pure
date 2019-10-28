@@ -1,40 +1,54 @@
-*::selection {
-  background: $pink;
+
+html {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  --bg-color: #{theme-color('background', 'base')};
+  --font-color: #{theme-color()};
+  --font-color-secondary: #{theme-color('secondary', 'base')};
+  --btn-bg-color: #{theme-color('accent', 'base')};
+  --btn-bg-color-state: #{theme-color('accent', 'base-state')};
+  &.transition,
+  &.transition *, 
+  &.transition *:before,
+  &.transition *:after {
+    transition: all 750ms !important;
+    transition-delay: 0 !important;
+  }
 }
 
-html,
+html[data-theme='dark'] {
+  --bg-color: #{theme-color('background', 'dark')};
+  --font-color: #{theme-color('primary', 'dark')};
+  --font-color-secondary: #{theme-color('secondary', 'dark')};
+  --btn-bg-color: #{theme-color('accent', 'dark')};
+  --btn-bg-color-state: #{theme-color('accent', 'dark-state')};
+  &.transition,
+  &.transition *, 
+  &.transition *:before,
+  &.transition *:after {
+    transition: all 750ms !important;
+    transition-delay: 0 !important;
+  }
+}
+
+h1 {
+  font-weight: 300;
+  font-size: $font-size-x-large;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: $font-size-small;
+}
+
 body {
-  height: 100%;
+  background-color: var(--bg-color);
 }
 
-body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-}
-
-.wrapper {
-  max-width: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-}
-
-p {
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: $blue;
-}
-
-img {
-  display: block;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
+button {
+  background-color: var(--btn-bg-color);
+  color: var(--font-color);
+  &:hover {
+    background-color: var(--btn-bg-color-state);
+  }
 }

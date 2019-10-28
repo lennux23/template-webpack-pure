@@ -1,0 +1,32 @@
+.container {
+  display: grid;
+  color: var(--font-color);
+  grid-template: [header-start] 50px  [header-end content-start] 1fr [content-end]/ 1fr [header-start content-start] 5fr [header-end content-end] 6fr;
+}
+
+.header {
+  grid-column: header;
+  grid-row: header;
+}
+
+.content {
+  grid-row: content;
+  grid-column: content;
+  justify-self: center;
+  & h1 {
+    padding-top: 5%;
+  }
+
+  & h4 {
+    color: var(--font-color-secondary);
+  }
+
+  & button {
+    border: 0;
+    padding: 10px 40px;
+    cursor: pointer;
+    color: white;
+
+  }
+
+}
